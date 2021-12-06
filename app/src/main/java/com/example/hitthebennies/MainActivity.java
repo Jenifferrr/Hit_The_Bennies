@@ -1,4 +1,4 @@
-package com.example.hitthebennies;
+package com.example.test;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity
 
     private CountDownTimer mTimer;
     private TextView score_id;
-    private ImageButton button1, button2, button3, button4, button5, button6,
-            button7, button8, button9, button10, button11, button12;
+    private ImageButton button1, button2, button3, button4, button5, button6, button7,button8,button9,button10, button11,button12;
     private Menu mMenu;
+    private TextView timer_id;
     private long mTimerLength = 30000;
     int score = 0;
 
@@ -72,6 +72,19 @@ public class MainActivity extends AppCompatActivity
         mMenu.findItem(R.id.action_stop).setVisible(false);
         score_id = (TextView) findViewById(R.id.score_id);
         button1 = (ImageButton) findViewById(R.id.button1);
+        button2 = (ImageButton) findViewById(R.id.button2);
+        button3 = (ImageButton) findViewById(R.id.button3);
+        button4 = (ImageButton) findViewById(R.id.button4);
+        button5 = (ImageButton) findViewById(R.id.button5);
+        button6 = (ImageButton) findViewById(R.id.button6);
+        button7 = (ImageButton) findViewById(R.id.button7);
+        button8 = (ImageButton) findViewById(R.id.button8);
+        button9 = (ImageButton) findViewById(R.id.button9);
+        button10 = (ImageButton) findViewById(R.id.button10);
+        button11 = (ImageButton) findViewById(R.id.button11);
+        button12 = (ImageButton) findViewById(R.id.button12);
+
+        timer_id = (TextView) findViewById(R.id.time_id);
         score = 0;
         score_id.setText("Score: " + score);
 
@@ -82,16 +95,95 @@ public class MainActivity extends AppCompatActivity
                 score_id.setText("Score: " + score);
             }
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+        button12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                score++;
+                score_id.setText("Score: " + score);
+            }
+        });
+
 
         if (mTimer != null)
         {
             mTimer.cancel();
         }
-        mTimer = new CountDownTimer(30000, 2000)
+        mTimer = new CountDownTimer(30000 , 1000)
         {
+
             public void onTick(long millisUntilFinished)
             {
-
+                timer_id.setText("Time: " + millisUntilFinished/1000);
             }
 
 
@@ -99,6 +191,17 @@ public class MainActivity extends AppCompatActivity
             {
                 mMenu.findItem(R.id.action_stop).setVisible(false);
                 button1.setClickable(false);
+                button2.setClickable(false);
+                button3.setClickable(false);
+                button4.setClickable(false);
+                button5.setClickable(false);
+                button6.setClickable(false);
+                button7.setClickable(false);
+                button8.setClickable(false);
+                button9.setClickable(false);
+                button10.setClickable(false);
+                button11.setClickable(false);
+                button12.setClickable(false);
             }
         }.start();
     }
