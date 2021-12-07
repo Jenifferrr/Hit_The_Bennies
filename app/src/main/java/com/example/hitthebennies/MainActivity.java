@@ -1,5 +1,6 @@
 package com.example.test;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -58,6 +59,11 @@ public class MainActivity extends AppCompatActivity
             mMenu.findItem(R.id.action_stop).setVisible(true);
             return true;
         }
+        else if (item.getItemId() == R.id.action_help)
+        {
+            Intent intent = new Intent(this, HelpActivity.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -66,6 +72,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    public void onHelpClick(View view) {
+        Intent intent = new Intent(this, HelpActivity.class);
+        startActivity(intent);
     }
 
     private void gameStart() {
@@ -178,7 +188,7 @@ public class MainActivity extends AppCompatActivity
         {
             mTimer.cancel();
         }
-        mTimer = new CountDownTimer(30000 , 1000)
+        mTimer = new CountDownTimer(mTimerLength , 1000)
         {
 
             public void onTick(long millisUntilFinished)
@@ -206,9 +216,10 @@ public class MainActivity extends AppCompatActivity
         }.start();
     }
 
-    @Override
+   @Override
     public void onGameDifficultyClick ( int which)
     {
         mTimerLength = 30000 / (which + 1);
     }
+
 }
